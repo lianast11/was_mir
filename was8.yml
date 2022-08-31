@@ -1,0 +1,9 @@
+- hosts: machine
+  become: yes
+  become_user: root
+  remote_user: root
+  
+  roles:  
+    - { role: mount_share, state: mounted }
+    - { role: ibm-was-8.5.5 }
+    - { role: mount_share, state: unmounted }
